@@ -69,6 +69,7 @@
 
 #main {
 	width:1024px;
+	margin: 0px auto;
 	font-family:"arial" !important;
 	color:gray;
 }	
