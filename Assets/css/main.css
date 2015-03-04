@@ -1,0 +1,459 @@
+.note-box {
+	position:absolute;
+	z-index:1;
+	width:350px;
+	color:black;
+	left:-140px;
+
+}
+
+.message {
+	width:260px;
+	position:absolute;
+	top:19px;
+	left:38px;
+	padding:10px;
+	text-align:left;
+	font-weight:normal !important;
+
+	
+}
+
+.active-region {
+	font-weight:bold;
+	color:#48A2D7;	
+}
+
+.active-navigation {
+	display: block !important;
+}
+
+.active {
+	display:block !important;
+}
+
+.unactive {
+	display:none;
+}
+
+.unactive-note{
+	display:none;
+}
+
+.active-category {
+	border-top:solid #27AAE1 1px;
+	border-left:solid #27AAE1 1px;
+	border-right:solid #27AAE1 1px;
+	border-bottom:0px !important;
+	font-weight:bold;
+	color:#48A2D7;	
+	
+}
+
+.note {
+	color:blue;
+	cursor:pointer;
+	position:relative;
+}
+
+
+.color {
+	background:#D4EFFC;
+}
+
+.clear {
+	clear:both;
+	font-size:0px;
+}	
+
+
+#main {
+	width:1024px;
+	font-family:"arial" !important;
+	color:gray;
+}	
+
+
+#regionals {
+	width:1024px;
+	font-family:"arial" !important;
+	color:gray;
+}
+
+#header {
+	margin:0px;
+	margin-top:20px;
+	margin-bottom:15px;
+	color:#58595B;
+}
+
+#categories {
+	font-size:14px;
+	margin-bottom:1px;
+	padding:0px 20px 10px 0px;
+}
+	
+#categories p{
+	float:left;
+	border-bottom:solid #27AAE1 1px;
+	width:180px;
+	padding:4px 0px 3px 0px;
+	margin:0px;
+}
+
+#navone, #navtwo {
+	display: none;
+}
+
+/*#categories ul{
+	display:none;
+}
+*/
+
+
+#regionals #categories p{
+	float:left;
+	border-bottom:solid #27AAE1 1px;
+	width:300px;
+	padding:4px 0px 3px 0px;
+	margin:0px;
+}
+
+/*#categories {
+	display:none;
+}*/
+	
+#categories ul {
+	margin:0px;
+	padding:0px;
+	float:left;
+}
+	
+#categories ul li {
+	list-style:none;
+	float:left;
+	padding:4px 10px 3px 10px;
+	border-bottom:solid #27AAE1 1px;
+	cursor: pointer;
+}
+/*MODIFYING YEARS*/
+
+#years {
+	font-size:12px;
+	font-weight:bold;
+	padding-bottom:5px;
+	margin-bottom:1px; /*used to make it not collapse*/
+}
+
+#years ul, #row1 ul, #row2 ul {
+	margin:0px;
+	padding:0px;
+}
+
+
+#years ul li {
+	list-style:none;
+	float:left;
+	width:64px;
+	text-align:center;
+
+}
+
+#row1, #row2 {
+	font-size:12px;
+}
+
+#row1 {
+	background:#D4EFFC;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+#row2 {
+	padding-top:5px;
+	padding-bottom:25px;
+	margin-bottom:1px;
+}
+
+
+#row1 ul li, #row2 ul li {
+	float:left;
+	list-style:none;
+	width:64px;
+	text-align:center;
+}
+
+/*FOOTER WHERE the 3 section goes*/
+
+
+#growth-plan {
+	width:180px;
+	margin-right:30px;
+	font-size:12px;
+}
+
+#video-section {
+	width:430px;
+	height:242px;
+	margin-right:30px;
+}
+
+
+#video-section img {
+	width:430px;
+	height:242px;
+	border:0px;
+}
+
+#graph-chart, #graph-chart > #image-container, #image-container img {
+	width:352px;
+	height:200px;
+	border:0px;
+}
+
+#graph-chart h4 {
+	margin: 0px;
+}
+
+#dynamic-chart {
+	width: 352px;
+	height: 230px;
+}
+
+
+#footer {
+	margin-top:20px;
+}
+
+.columns
+{
+	float:left;
+}
+
+/*THIS WILL BE FOR GROWTH PLAN SECTION*/
+#section-1 {
+	margin:0px 0px 15px 0px;
+
+}
+
+#growth-plan p{
+	text-align:center;
+	margin:0px 0px 10px 0px;
+	padding:0px 0px 0px 0px;
+	border-bottom:solid #27AAE1 1px;
+	font-weight:bold;
+	color:gray;
+}
+
+
+#section-1 ul li {
+	list-style:none;
+	width:90px;
+}
+
+#section-2 ul li {
+	list-style:none;
+	width:180px;
+}
+
+.sub-a {
+
+	float:left;
+
+}
+
+.sub-b{
+
+	float:right;
+	
+}
+
+
+.sub-a ul {
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	float:left;
+	
+}
+
+.sub-b ul {
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	float:right;
+	
+}
+
+#section-2 {
+	margin:0px 0px 15px 0px;
+	padding:0px;
+}
+
+#section-2 ul {
+	margin:0px;
+	padding:0px;
+	text-align:center;
+
+}
+
+#section-2 li {
+	margin:0px auto;  /*for centering annual growth list*/
+}
+
+#section-3 .sub-a, #section-3 .sub-b, #section-3 .sub-c {
+	float:left;
+	width: 33%;
+}
+
+#section-3 ul li {
+	list-style: none;
+
+}
+
+#section-3 .sub-a ul, #section-3 .sub-b ul, #section-3 .sub-c ul {
+	text-align: center;
+	float:none;
+	margin:0px;
+	padding:0px;
+}
+
+/*FIXED NOTE CSS SECTION*/
+#fixed-note p {
+	font-size:13px;
+	float:left;
+	margin:0px;
+
+
+}
+
+#p-1 {
+	width:70px;
+	font-size:14px;
+	color:#00AEEF;
+}
+
+#table-section {
+	padding-bottom:12px;
+	margin-bottom:1px;
+
+}
+
+#table-section span {
+	float:left;
+	width:80px;
+}
+
+#table-section ul {
+	margin:0px;
+	padding:0px;
+	float:left;
+
+
+}
+
+
+#table-section li {
+	list-style:none;
+	float:left;
+	padding-right:15px;
+	cursor:pointer;
+}
+
+#year-label div{
+	float:left;
+	text-align:center;
+	color:white;
+	padding:2px 0px;
+	margin-bottom:5px;
+}
+
+#actual {
+	width:256px;
+	background:#488AC7;
+}
+
+#budget {
+	width:64px;
+	background:#56A5EC;
+}
+
+#target-growth {
+	width:704px;
+	background:#5CB3FF;	
+}
+
+#graph-chart h2 {
+	margin:0px;
+	padding:0px;
+	margin-bottom:5px;
+	
+}
+
+#video-section ul{
+	margin:0px;
+	padding:0px;
+}
+
+#video-section li{
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+
+#image-container ul{
+	margin:0px;
+	padding:0px;
+}
+
+#image-container li{
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+
+#gc-footer img{
+	width:200px;
+}
+
+
+
+#loader {
+	text-align:center;
+}
+
+#partner-sites {
+	left: 654px;
+	position: absolute;
+	top: 45px;
+	width: 440px;
+}
+
+#partner-site-leftbox {
+	color: #9cbccb;
+	float: left;
+	font-weight: bold;
+	padding-right: 10px;
+	text-align: right;
+	margin-top: 4px;
+}
+
+#partner-site-leftbox p {
+	margin: 0px;
+}
+
+#partner-site-rightbox {
+	float: left;
+}
+
+#partner-site-rightbox img {
+	width: 200px;
+}
+
+#partner-site-footerbox {
+	margin-top: 45px;
+}
+
+#partner-site-footerbox img {
+	width:365px;
+}

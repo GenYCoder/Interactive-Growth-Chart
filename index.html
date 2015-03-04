@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Interactive Data</title>
+		<link href="Assets/css/main.css" rel="stylesheet" type="text/css">
+		<link href="Assets/css/morris.css" rel="stylesheet" type="text/css" />		
+		
+		<script src="Libs/angular.min.js"></script>
+		<script src="clinicalGrowthApp.module.js"></script>
+		<script src="Filters/customFilters.js"></script>
+		<script src="Directives/customDirectives.js"></script>
+		<script src="Libs/papaparse.min.js"></script>
+		<script src="Libs/jquery.js"></script>
+		<script src="Libs/raphael-min.js"></script>
+		<script src="Libs/morris-0.4.3.min.js"></script>
+		
+	</head>
+	<body>
+		<div id="main" ng-app="myApp" ng-controller="mainController" ng-click="removeNote()">
+
+		<!--HEADER-->
+			<div id="header">
+			<span style="font-size:30px; color:black; font-weight:bold ">Lorem Ipsum:</span><span style="font-size:30px; color:black;"> Consectetur Adipisicing</span>
+			</div>
+			
+			<div id="table-section">
+				<span>SELECT »</span>
+				<ul>
+					<li ng-click="setRegion('Manhattan')" ng-class="getRegionClass('Manhattan')" id="Manhattan">MANHATTAN</li>
+					<li ng-click="setRegion('Regional')" ng-class="getRegionClass('Regional')" id="Regional">REGIONALS</li>
+					<li ng-click="setRegion('Combined')" ng-class="getRegionClass('Combined')" id="Combined">COMBINED</li>
+					<!-- <li id="Market-Share">MARKET SHARE</li> -->
+				</ul>
+				<div class="clear"></div>
+			</div>			
+			
+
+			<div id="data-container" class="">	
+		<!--CATEGORIES LIST-->
+				<div id="categories">
+					<p>CATEGORIES</p>
+					<ul id="navone" ng-class="getNativationClass('navone')">
+						<li ng-click="setCategory('or-cases')" ng-class="getCategoryClass('or-cases')" id="or-cases">OR CASES</li>
+						<li ng-click="setCategory('clinic-visits')" ng-class="getCategoryClass('clinic-visits')" id="clinic-visits">CLINIC VISITS</li>
+						<li ng-click="setCategory('transplants')" ng-class="getCategoryClass('transplants')" id="transplants">TRANSPLANTS</li>
+						<li ng-click="setCategory('chemo-treatments')" ng-class="getCategoryClass('chemo-treatments')" id="chemo-treatments">CHEMO TREATMENTS</li>
+						<li ng-click="setCategory('rad-onc-treatments')" ng-class="getCategoryClass('rad-onc-treatments')" id="rad-onc-treatments">RAD ONC TREATMENTS</li>
+						<li ng-click="setCategory('inpatient-days')" ng-class="getCategoryClass('inpatient-days')" id="inpatient-days">INPATIENT DAYS</li>
+					</ul>
+				
+					<ul id="navtwo" ng-class="getNativationClass('navtwo')">
+						<li ng-click="setCategory('or-cases')" ng-class="getCategoryClass('or-cases')" id="or-cases">OR CASES</li>
+						<li ng-click="setCategory('clinic-visits')" ng-class="getCategoryClass('clinic-visits')" id="clinic-visits">CLINIC VISITS</li>
+						<li ng-click="setCategory('chemo-treatments')" ng-class="getCategoryClass('chemo-treatments')" id="chemo-treatments">CHEMO TREATMENTS</li>
+						<li ng-click="setCategory('rad-onc-treatments')" ng-class="getCategoryClass('rad-onc-treatments')" id="rad-onc-treatments">RAD ONC TREATMENTS</li>
+						<li id="blank-li" style="width:235px">&nbsp;</li>
+					
+					</ul>
+
+					<div class="clear"></div>
+				</div>
+
+		<!--YEAR LABEL-->
+				<div id="year-label">
+					<div id="actual">Actual Volume</div>
+					<div id="budget">Budget</div>
+					<div id="target-growth">Targeted Growth</div>
+					<div class="clear"></div>
+				</div>	
+				
+			
+		<!--YEAR-->		
+				<div id="years">
+					<div class="rows">
+						<ul>
+							<li ng-repeat="row in model | limitTo:16">
+								<div shownotes class="note" ng-if="row.message.length > 0">
+									{{row.section}}
+							        <div removenotes class="note-box unactive-note">
+							        	<div style="position:relative;">  
+									        <img src="Assets/img/toparrow.png" width="350px" style="position:absolute; top: 2px; left:0px"><img class="box" src="Assets/img/box.png" width="354px" style="position:absolute; top:13px; left:-1px">
+									        <div class="message">{{row.message}}</div>
+									    </div>
+									</div>
+
+								</div>
+
+								<div ng-if="row.message.length == 0">{{row.section}}</div>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+		<!--DATA VOLUME-->		
+				<div id="row1">
+					<div class="rows">
+						<ul>
+							<li ng-repeat="row in model | limitTo:16">{{row.data | number:0 | zeroToDash}}</li>
+						</ul>
+						<div class="clear"></div>
+					</div>	
+				</div>
+		<!--DATA PCT-->	
+				<div id="row2">
+					<div class="rows">
+						<ul>
+							<li ng-repeat="row in model | limitTo:16 | convertPCT:true track by $index">{{row | zeroToDash:'percentage'}}</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+
+				<ng-include src="'Views/note.html'"></ng-include>			
+				<ng-include src="'Views/footer.html'"></ng-include>
+			</div>		
+					
+		</div>
+
+	</body>
+	</html>	

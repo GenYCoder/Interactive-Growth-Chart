@@ -1,0 +1,101 @@
+<!--FOOTER-->
+<div id="footer">			
+	<div id="growth-plan" class="columns">
+	
+		<div id="section-1">
+			<p>GROWTH</p>
+		
+		
+			<div class="sub-a">
+				<div class="rows">
+					<ul>
+						<li>2010-2025</li>
+						<li class="color">{{getGrowthRange(2010,2025) | number:0 | zeroToDash}}</li>
+						<li>{{getGrowthRangePct(2010,2025) | zeroToDash:'percentage'}}</li>
+					</ul>
+				</div>
+			</div>
+		
+			<div class="sub-b">
+				<div class="rows">
+					<ul>
+						<li>2014-2025</li>
+						<li class="color">{{getGrowthRange(2014,2025) | number:0 | zeroToDash}}</li>
+						<li>{{getGrowthRangePct(2014,2025) | zeroToDash:'percentage'}}</li>
+					</ul>
+				</div>
+			</div>
+	
+			<div class="clear"></div>
+		</div> 
+<!--END OF SECTION 1-->
+		<div id="section-2">
+			<p>ANNUAL GROWTH NEEDED</p>
+			<div>
+				<ul>
+					<li>2014-2025</li>
+					<li class="color">-</li>
+					<li ng-repeat="row in model | filter: {'section':'Annual Growth'} | limitTo:1">{{row.data | zeroToDash:'percentage'}}</li>
+				</ul>
+			</div>
+
+		
+		</div>
+<!--END OF SECTION 2-->
+		<div id="section-3">
+			<p>GROWTH</p> <!--this should be static because of append-->
+		
+			<div class="sub-a">
+				<div class="rows">
+					<ul>
+						<li>2026</li>
+						<li class="color" ng-repeat="row in model | filter:{'section':2026} | limitTo:1">{{row.data | number:0 | zeroToDash}}</li>
+						<li>{{getPCT(2026)}}</li>
+					</ul>
+				</div>
+			</div>
+		
+			<div class="sub-b">
+				<div class="rows">
+					<ul>
+						<li>2027</li>
+						<li class="color" ng-repeat="row in model | filter:{'section':2027} | limitTo:1">{{row.data | number:0 | zeroToDash}}</li>
+						<li>{{getPCT(2027)}}</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="sub-c">
+				<div class="rows">
+					<ul>
+						<li>2028</li>
+						<li class="color" ng-repeat="row in model | filter:{'section':2028} | limitTo:1">{{row.data | number:0 | zeroToDash}}</li>
+						<li>{{getPCT(2028)}}</li>
+					</ul>
+				</div>
+			</div>			
+			<div class="clear"></div>
+		</div>
+<!--END OF SECTION 3-->
+	</div>
+
+	<div id="video-section" class="columns">
+<!--html code for video goes here-->
+		<a ng-repeat="row in model | filter:{'section':'Video Link'} | limitTo:1" href="{{row.data}}" target="_blank">
+			<img ng-repeat="row in model | filter:{'section':'Video Photo'} | limitTo:1" ng-src="{{row.data}}" />
+		</a> 			
+	</div>
+
+	<div id="graph-chart" class="columns">
+		<h4>Projected</h4>
+		<div id="dynamic-chart"></div>
+		
+	</div>
+
+	<div class="clear"></div>
+</div>	
+
+<div otc-scripts scripts="scripts">
+
+</div>
+
