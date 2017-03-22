@@ -133,7 +133,7 @@
 #categories ul li {
 	list-style:none;
 	float:left;
-	padding:4px 10px 3px 10px;
+	padding:4px 64px 3px 10px;
 	border-bottom:solid #27AAE1 1px;
 	cursor: pointer;
 }
